@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile - Servly</title>
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<!-- 🔹 HEADER -->
+<header class="navbar">
+  <div class="nav-left">
+    <a href="home.html" class="logo">
+      <img src="assets/images/logo.png" alt="Servly Logo">
+      <span>Servly</span>
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn secondary" onclick="goToHome()">Home</button>
+    <button id="profileBtn" class="nav-btn secondary" style="display:none;">Profile</button>
+    <button id="authBtn" class="nav-btn primary">Login</button>
+  </div>
+</header>
+
+<!-- 🔹 MAIN CONTAINER -->
+<div class="container">
+
+  <!-- 🔹 PROFILE CARD -->
+  <div class="card" style="max-width:500px; margin:60px auto; text-align:center;">
+
+    <h2>Profile</h2>
+
+    <!-- Dynamic data from Firebase -->
+    <div id="profileData"></div>
+
+    <!-- Actions -->
+    <div style="margin-top:20px;">
+      <button class="primary" onclick="logout()">Logout</button>
+      <button onclick="window.location.href='booking.html'">📅 My Bookings</button>
+      <button class="secondary" onclick="goToWorkers()">View Providers</button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 🔹 SCRIPTS -->
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/profile.js"></script>
+<script type="module" src="js/global.js"></script>
+
+</body>
+</html>

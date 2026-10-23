@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat - Servly</title>
+
+  <!-- Mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<!-- 🔹 HEADER -->
+<header class="navbar">
+  <div class="nav-left">
+    <a href="home.html" class="logo">
+      <img src="assets/images/logo.png" alt="Servly Logo">
+      <span>Servly</span>
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn secondary" onclick="goToHome()">Home</button>
+    <button id="profileBtn" class="nav-btn secondary" style="display:none;">Profile</button>
+   <button id="authBtn" class="nav-btn primary">Login</button>
+  </div>
+</header>
+
+<!-- 🔹 MAIN CHAT CONTAINER -->
+<div class="container">
+
+  <div class="card" style="max-width:800px; margin:40px auto; display:flex; flex-direction:column; height:75vh;">
+
+    <h3 style="text-align:center;">Chat</h3>
+
+    <!-- Messages -->
+    <div id="messages" style="flex:1; overflow-y:auto;"></div>
+
+    <!-- Input -->
+    <div style="display:flex; gap:10px; margin-top:10px;">
+      <input type="text" id="msgInput" placeholder="Type message">
+      <button class="primary" onclick="sendMessage()">Send</button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- JS -->
+<script type="module" src="js/chat.js"></script>
+<script type="module" src="js/global.js"></script>
+</body>
+</html>

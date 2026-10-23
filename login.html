@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Servly</title>
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<!-- 🔹 HEADER -->
+<header class="navbar">
+  <div class="nav-left">
+    <a href="home.html" class="logo">
+      <img src="assets/images/logo.png" alt="Servly Logo">
+      <span>Servly</span>
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn secondary" onclick="goToHome()">Home</button>
+    <button id="profileBtn" class="nav-btn secondary" style="display:none;">Profile</button>
+    <button id="authBtn" class="nav-btn primary">Login</button>
+  </div>
+</header>
+
+<!-- 🔹 LOGIN CARD -->
+<div class="card" style="max-width:400px; margin:80px auto; text-align:center;">
+
+  <h2>Login</h2>
+
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+
+  <button class="primary" onclick="login()">Login</button>
+  <p id="loginMsg" style="margin-top:10px;"></p>
+  <p id="loginMsg"></p>
+</div>
+
+<!-- 🔹 SCRIPTS -->
+<script type="module" src="js/login.js"></script>
+<script type="module" src="js/global.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servly</title>
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- 🔹 HEADER -->
+<header class="navbar">
+  <div class="nav-left">
+    <a href="home.html" class="logo">
+      <img src="assets/images/logo.png" alt="Servly Logo">
+      <span>Servly</span>
+    </a>
+  </div>
+
+  <div class="nav-right">
+
+    <button class="nav-btn secondary" onclick="goToHome()">Home</button>
+    <button id="profileBtn" class="nav-btn secondary" style="display:none;">Profile</button>
+
+    <!-- 🔽 SERVICES DROPDOWN -->
+    <div class="dropdown">
+      <button class="nav-btn secondary">Services ▾</button>
+      <div class="dropdown-content">
+        <div onclick="goToWorkers('electrician')">Electrician</div>
+        <div onclick="goToWorkers('plumber')">Plumber</div>
+        <div onclick="goToWorkers('ac repair')">AC Repair</div>
+      </div>
+    </div>
+
+    <!-- 🔽 EXPLORE -->
+    <button class="nav-btn secondary" onclick="goToWorkers()">Explore</button>
+
+    <!-- ⚡ EMERGENCY -->
+    <div class="dropdown">
+      <button class="nav-btn emergency">Emergency ⚡</button>
+      <div class="dropdown-content">
+        <div onclick="goToWorkers('electrician')">24/7 Electrician</div>
+        <div onclick="goToWorkers('plumber')">Emergency Plumber</div>
+        <div onclick="goToWorkers('ambulance')">Ambulance</div>
+      </div>
+    </div>
+
+    <!-- ℹ️ ABOUT -->
+    <button class="nav-btn secondary" onclick="window.location.href='about.html'">About</button>
+    <!-- ❓ HELP -->
+    <button class="nav-btn secondary" onclick="window.location.href='help.html'">Help</button>
+
+    <!-- 🔐 LOGIN -->
+    <button id="authBtn" class="nav-btn primary">Login</button>
+  </div>
+</header>
+
+<!-- 🔹 HERO SECTION -->
+<section class="hero">
+  <h1>Find trusted services near you</h1>
+  <p>Bringing the right help to your doorstep, when you need it most.</p>
+
+  <div class="hero-buttons">
+    <button class="primary" onclick="goToLogin()">Get Started</button>
+    <button class="secondary" onclick="goToWorkers()">Explore Services</button>
+  </div>
+
+  <!-- Trust Line -->
+  <p style="margin-top:20px; font-size:14px; color:#888;">
+    Trusted by local professionals • Fast • Reliable
+  </p>
+</section>
+
+<!-- ⭐ POPULAR SERVICES -->
+<section class="section">
+  <h2>⭐ Popular Services</h2>
+
+  <div class="services-row">
+    <div class="service-card" onclick="goToWorkers('electrician')">Electrician</div>
+    <div class="service-card" onclick="goToWorkers('ac repair')">AC Repair</div>
+    <div class="service-card" onclick="goToWorkers('maid')">Maid</div>
+    <div class="service-card" onclick="goToWorkers('beautician')">Beautician</div>
+    <div class="service-card" onclick="goToWorkers('home tutor')">Home Tutor</div>
+  </div>
+</section>
+
+<!-- ⚡ EMERGENCY SERVICES -->
+<section class="section">
+  <h2>⚡ Emergency Services</h2>
+
+  <div class="services-row">
+    <div class="service-card emergency" onclick="goToWorkers('electrician')">Electrician</div>
+    <div class="service-card emergency" onclick="goToWorkers('plumber')">Plumber</div>
+    <div class="service-card emergency" onclick="goToWorkers('doctor')">Doctor</div>
+    <div class="service-card emergency" onclick="goToWorkers('ambulance')">Ambulance</div>
+  </div>
+</section>
+
+<!-- 🧱 SERVICE CATEGORIES -->
+<section class="section">
+  <h2>Explore Services</h2>
+
+  <div class="category-grid">
+
+    <div class="category-card" onclick="openCategory('home')">🏠 Home Services</div>
+    <div class="category-card" onclick="openCategory('repair')">🔧 Repair & Maintenance</div>
+    <div class="category-card" onclick="openCategory('logistics')">🚚 Moving & Logistics</div>
+    <div class="category-card" onclick="openCategory('tech')">💻 Tech Services</div>
+    <div class="category-card" onclick="openCategory('lifestyle')">🎨 Personal & Lifestyle</div>
+    <div class="category-card" onclick="openCategory('education')">📚 Education & Training</div>
+    <div class="category-card" onclick="openCategory('medical')">🏥 Medical Services</div>
+
+  </div>
+</section>
+
+<!-- 🔹 FEATURES -->
+<div class="feature-card" onclick="goToWorkers()">
+  <h3>🔍 Easy Discovery</h3>
+  <p>Find nearby trusted professionals in seconds.</p>
+</div>
+
+<div class="feature-card" onclick="goToWorkers()">
+  <h3>⭐ Verified Reviews</h3>
+  <p>Choose services based on real user ratings.</p>
+</div>
+
+<div class="feature-card" onclick="goToWorkers()">
+  <h3>⚡ Quick Booking</h3>
+  <p>Book services instantly with a smooth experience.</p>
+</div>
+
+<!-- 🔹 FOOTER -->
+<footer>
+  © 2026 Servly. All rights reserved.
+</footer>
+
+<!-- JS -->
+<script src="js/home.js"></script>
+<script type="module" src="js/global.js"></script>
+</body>
+</html>

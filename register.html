@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Servly</title>
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<!-- 🔹 HEADER -->
+<header class="navbar">
+  <div class="nav-left">
+    <a href="home.html" class="logo">
+      <img src="assets/images/logo.png" alt="Servly Logo">
+      <span>Servly</span>
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn secondary" onclick="goToHome()">Home</button>
+    <button id="profileBtn" class="nav-btn secondary" style="display:none;">Profile</button>
+    <button id="authBtn" class="nav-btn primary">Login</button>
+   </div>
+</header>
+
+<!-- 🔹 MAIN -->
+<div class="container">
+
+  <div class="card" style="max-width:450px; margin:60px auto; text-align:center;">
+
+    <h2>Register</h2>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <!-- Role -->
+    <select id="role" onchange="toggleProviderFields()">
+      <option value="">Select Role</option>
+      <option value="user">User</option>
+      <option value="provider">Service Provider</option>
+    </select>
+
+    <!-- Provider Fields -->
+    <div id="providerFields" style="display:none; margin-top:10px;">
+      <input type="text" id="service" placeholder="Service (e.g. electrician)">
+      <input type="text" id="city" placeholder="City">
+      <input type="text" id="state" placeholder="State">
+      <input type="text" id="phone" placeholder="Phone Number">
+      <input type="text" id="gender" placeholder="Gender">
+    </div>
+
+    <button class="primary" onclick="register()">Register</button>
+
+  </div>
+
+</div>
+
+<!-- 🔹 SCRIPTS -->
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/register.js"></script>
+<script type="module" src="js/global.js"></script>
+
+</body>
+</html>

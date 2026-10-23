@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookings - Servly</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<!-- 🔹 HEADER -->
+<header class="navbar">
+  <div class="nav-left">
+    <a href="home.html" class="logo">
+      <span>Servly</span>
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn secondary" onclick="goToHome()">Home</button>
+    <button id="profileBtn" class="nav-btn secondary" style="display:none;">Profile</button>
+    <button class="nav-btn secondary" onclick="goToWorkers()">Services</button>
+    <button id="authBtn" class="nav-btn primary">Login</button>
+  </div>
+</header>
+
+<!-- 🔹 MAIN -->
+<div class="container">
+  <h2>📅 My Bookings</h2>
+
+  <!-- 🔥 BOOK SERVICE FORM -->
+  <div class="card" style="margin-bottom:20px;">
+    <h3>Book Service</h3>
+
+    <!-- 🔥 service input -->
+  <input
+    type="text"
+    id="service"
+    placeholder="Service (e.g. electrician)"
+    oninput="loadProviders()"
+  >
+
+  <input
+    type="text"
+    id="location"
+    placeholder="Enter city (e.g. Kota)"
+    oninput="loadProviders()"
+  >
+
+    <!-- 🔥 provider dropdown -->
+    <select id="providerSelect" style="margin-top:10px;">
+      <option value="">Select Provider</option>
+    </select>
+
+    <!-- 🔥 Prevent past dates -->
+    <input type="date" id="date" min="">
+
+    <input type="time" id="time">
+
+    <button class="primary" id="confirmBookingBtn">
+      Confirm Booking
+    </button>
+  </div>
+
+  <!-- 🔥 BOOKINGS LIST -->
+  <div id="bookingsList"></div>
+</div>
+
+<!-- 🔹 SCRIPTS -->
+<script>
+  // 🔥 Set minimum date to today
+  window.addEventListener("DOMContentLoaded", () => {
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("date").setAttribute("min", today);
+  });
+</script>
+
+<script type="module" src="js/booking.js"></script>
+<script type="module" src="js/global.js"></script>
+
+</body>
+</html>

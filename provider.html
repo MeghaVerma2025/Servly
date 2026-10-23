@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Provider Dashboard - Servly</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+<!-- 🔹 HEADER -->
+<header class="navbar">
+  <div class="nav-left">
+    <a href="home.html" class="logo">
+      <span>Servly</span>
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <button onclick="goToHome()">Home</button>
+    <button onclick="goToWorkers()">Services</button>
+    <button id="profileBtn" class="nav-btn secondary" style="display:none;">Profile</button>
+    <button id="authBtn" class="nav-btn primary">Login</button>
+</div>
+</header>
+
+<!-- 🔹 MAIN -->
+<div class="container">
+  <h2>🧑‍🔧 Provider Dashboard</h2>
+
+  <div id="providerBookings"></div>
+</div>
+
+<script type="module" src="js/provider.js"></script>
+<script type="module" src="js/global.js"></script>
+</body>
+</html>

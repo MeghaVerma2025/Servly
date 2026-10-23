@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Servly</title>
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #555;
+    }
+
+    .logo img {
+      height: 80px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="home.html" class="logo">
+    <img src="assets/images/logo.png" alt="Servly Logo">
+  </a>
+
+<p>Preparing Servly for you...</p>
+
+<script type="module">
+  import { auth, db } from "./js/firebase.js";
+  import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+  import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+  onAuthStateChanged(auth, async (user) => {
+    setTimeout(async () => {
+      if (user) {
+        try {
+          const ref = doc(db, "users", user.uid);
+          const snap = await getDoc(ref);
+
+          if (snap.exists()) {
+            const data = snap.data();
+
+            // 🔥 ROLE-BASED REDIRECT
+            if (data.role === "provider") {
+              window.location.href = "provider.html";
+            } else {
+              window.location.href = "workers.html";
+            }
+          } else {
+            // fallback
+            window.location.href = "home.html";
+          }
+
+        } catch (error) {
+          console.error(error);
+          window.location.href = "home.html";
+        }
+
+      } else {
+        window.location.href = "home.html";
+      }
+    }, 2000);
+  });
+</script>
+
+</body>
+</html>
